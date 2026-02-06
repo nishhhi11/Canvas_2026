@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2026 is my year</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #ffe5ea;
+
+            background:
+                radial-gradient(circle at 20% 15%, rgba(255, 77, 109, 0.35), transparent 45%),
+                radial-gradient(circle at 80% 60%, rgba(180, 0, 40, 0.35), transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(255, 120, 150, 0.15), transparent 55%),
+                linear-gradient(180deg,
+                    #3a0b14 0%,
+                    #2a050b 35%,
+                    #140306 70%,
+                    #060102 100%);
+
+            background-attachment: fixed;
+            animation: bgFloat 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgFloat {
+            from {
+                background-position: 0% 0%, 100% 100%, 50% 100%, center;
+            }
+
+            to {
+                background-position: 6% 6%, 94% 94%, 50% 95%, center;
+            }
+        }
+
+
+        header {
+            position: relative;
+            text-align: center;
+            padding: 110px 20px 40px;
+            overflow: hidden;
+        }
+
+ 
+        .hero-glow {
+            position: absolute;
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 460px;
+            height: 460px;
+            background: radial-gradient(circle, rgba(255, 77, 109, 0.45), transparent 70%);
+            filter: blur(70px);
+            z-index: 0;
+        }
+
+
+        header h1 {
+            position: relative;
+            z-index: 1;
+            font-family: 'Playfair Display', serif;
+            font-size: 58px;
+            margin-bottom: 14px;
+
+            background: linear-gradient(90deg, #ff9bb0, #ff4d6d, #ff9bb0);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+
+            text-shadow: 0 0 35px rgba(255, 77, 109, 0.55);
+        }
+
+
+        header h1::after {
+            content: "";
+            display: block;
+            width: 140px;
+            height: 3px;
+            margin: 16px auto 0;
+            background: linear-gradient(90deg, transparent, #ff4d6d, transparent);
+        }
+
+        header p {
+            position: relative;
+            z-index: 1;
+            opacity: 0.85;
+            font-size: 16px;
+        }
+
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin: 30px 0 40px;
+            font-size: 14px;
+            opacity: 0.9;
+            flex-wrap: wrap;
+        }
+
+        .stats span {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 80, 120, 0.25);
+        }
+
+
+        .section-title {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+            opacity: 0.85;
+            letter-spacing: 1px;
+        }
+
+
+        .vision-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 32px;
+            padding: 40px 60px 100px;
+        }
+
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 80, 120, 0.35);
+            border-radius: 18px;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 20px 40px rgba(180, 0, 40, 0.35);
+
+            display: flex;
+            flex-direction: column;
+
+            transform: translateY(30px);
+            opacity: 0;
+            transition: transform 0.45s ease, box-shadow 0.45s ease;
+        }
+
+        .card.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px rgba(180, 0, 40, 0.55);
+        }
+
+        .card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.06);
+        }
+
+
+        .card .text {
+            padding: 20px 16px;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.02),
+                    rgba(40, 5, 10, 0.45));
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            opacity: 0.65;
+            font-size: 14px;
+        }
+
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 40px;
+            }
+
+            .vision-board {
+                padding: 30px 20px 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="hero-glow"></div>
+        <h1>2026 is my year</h1>
+        <p>Focused. Disciplined. Wealthy. Unbothered.</p>
+    </header>
+
+    <div class="stats">
+        <span>💸 Abundance</span>
+        <span>🎓 Academic Glow-Up</span>
+        <span>✈️ Freedom</span>
+        <span>👑 Confidence</span>
+    </div>
+
+    <div class="section-title">MY 2026 VISION</div>
+
+    <section class="vision-board">
+        <div class="card"><img src="boss.jpg">
+            <div class="text">👑 Lady Boss Energy</div>
+        </div>
+        <div class="card"><img src="travel.jpg">
+            <div class="text">✨ Main character future</div>
+        </div>
+        <div class="card"><img src="money.jpg">
+            <div class="text">🍒 Money flows to me effortlessly</div>
+        </div>
+        <div class="card"><img src="quote.jpg">
+            <div class="text">🖤 Calm discipline</div>
+        </div>
+        <div class="card"><img src="abundant.jpg">
+            <div class="text">💸 Abundance mindset</div>
+        </div>
+        <div class="card"><img src="goodgrades.jpg">
+            <div class="text">🎓 I get excellent grades</div>
+        </div>
+        <div class="card"><img src="study.jpg">
+            <div class="text">📚 Studying makes me powerful</div>
+        </div>
+        <div class="card"><img src="luxury.jpg">
+            <div class="text">💎 Soft luxury lifestyle</div>
+        </div>
+        <div class="card"><img src="discipline.jpg">
+            <div class="text">🔥 Discipline &gt; motivation</div>
+        </div>
+        <div class="card"><img src="success.jpg">
+            <div class="text">⚡ Success is my normal</div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Vision Board • That Girl Energy
+    </footer>
+
+    <script>
+        const cards = document.querySelectorAll(".card");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("show");
+            });
+        }, { threshold: 0.15 });
+
+        cards.forEach(card => observer.observe(card));
+    </script>
+
+</body>
+
+</html>
